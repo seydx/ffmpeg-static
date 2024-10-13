@@ -52,7 +52,7 @@
         "arch": "x64",
         "filename": "ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
         "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
-        "version": "7.0.7",
+        "version": "7.1",
         "type": "zip"
     }
 ]
