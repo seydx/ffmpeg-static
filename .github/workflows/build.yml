@@ -1,0 +1,62 @@
+name: FFmpeg Build and Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.17.0'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Build FFmpeg binaries
+        run: node build.js
+
+      - name: Upload FFmpeg binaries as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ffmpeg-binaries
+          path: ffmpeg-binaries
+
+  create-release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from package.json
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ffmpeg-binaries
+          path: ffmpeg-binaries
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.package-version.outputs.current-version}}
+          name: Release v${{ steps.package-version.outputs.current-version}}
+          draft: false
+          prerelease: false
+          files: |
+            ffmpeg-binaries/**/*
