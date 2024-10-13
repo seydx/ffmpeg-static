@@ -40,6 +40,14 @@
         "type": "tar"
     },
     {
+        "platform": "freebsd",
+        "arch": "x64",
+        "filename": "ffmpeg-freebsd-x86_64.tar.gz",
+        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-freebsd-x86_64.tar.gz",
+        "version": "7.0.2",
+        "type": "tar"
+    },
+    {
         "platform": "win32",
         "arch": "ia32",
         "filename": "ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
