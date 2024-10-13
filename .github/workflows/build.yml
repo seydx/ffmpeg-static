@@ -27,7 +27,7 @@ jobs:
         run: node build.js
 
       - name: Upload FFmpeg binaries as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ffmpeg-binaries
           path: ffmpeg-binaries
