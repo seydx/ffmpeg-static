@@ -19,7 +19,7 @@
         "platform": "linux",
         "arch": "x64",
         "filename": "ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
-        "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
         "version": "7.1",
         "type": "tar"
     },
@@ -27,7 +27,7 @@
         "platform": "linux",
         "arch": "arm64",
         "filename": "ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
-        "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
         "version": "7.1",
         "type": "tar"
     },
@@ -59,8 +59,72 @@
         "platform": "win32",
         "arch": "x64",
         "filename": "ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
-        "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
         "version": "7.1",
         "type": "zip"
+    },
+    {
+        "platform": "darwin",
+        "arch": "x64",
+        "filename": "ffmpeg-darwin-x86_64.tar.gz",
+        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-darwin-x86_64.tar.gz",
+        "version": "6.1.2",
+        "type": "tar"
+    },
+    {
+        "platform": "darwin",
+        "arch": "arm64",
+        "filename": "ffmpeg-darwin-arm64.tar.gz",
+        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-darwin-arm64.tar.gz",
+        "version": "6.1.2",
+        "type": "tar"
+    },
+    {
+        "platform": "linux",
+        "arch": "x64",
+        "filename": "ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
+        "version": "6.1",
+        "type": "tar"
+    },
+    {
+        "platform": "linux",
+        "arch": "arm64",
+        "filename": "ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
+        "version": "6.1",
+        "type": "tar"
+    },
+    {
+        "platform": "linux",
+        "arch": "arm",
+        "filename": "ffmpeg-alpine-arm32v7.tar.gz",
+        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-alpine-arm32v7.tar.gz",
+        "version": "6.1.2",
+        "type": "tar"
+    },
+    {
+        "platform": "win32",
+        "arch": "ia32",
+        "filename": "ffmpeg-n6.1-latest-win32-gpl-6.1.zip",
+        "url": "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n6.1-latest-win32-gpl-6.1.zip",
+        "version": "6.1",
+        "type": "zip"
+    },
+    {
+        "platform": "win32",
+        "arch": "x64",
+        "filename": "ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
+        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
+        "version": "6.1",
+        "type": "zip"
+    },
+    {
+        "platform": "freebsd",
+        "arch": "x64",
+        "filename": "ffmpeg-freebsd-x86_64.tar.gz",
+        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-freebsd-x86_64.tar.gz",
+        "version": "6.1.2",
+        "type": "tar"
     }
 ]
