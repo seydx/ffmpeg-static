@@ -26,11 +26,26 @@ jobs:
       - name: Build FFmpeg binaries
         run: node build.js
 
+      - name: List ffmpeg-binaries content
+        run: |
+          ls -R ffmpeg-binaries
+          echo "Total directories:"
+          find ffmpeg-binaries -type d | wc -l
+
+      - name: Create ZIP files for each platform
+        run: |
+          cd ffmpeg-binaries
+          for dir in */; do
+            platform=${dir%/}
+            zip -r "${platform}.zip" "$dir"
+          done
+          cd ..
+
       - name: Upload FFmpeg binaries as artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ffmpeg-binaries
-          path: ffmpeg-binaries
+          name: ffmpeg-binaries-zips
+          path: ffmpeg-binaries/*.zip
 
   create-release:
     needs: build
@@ -47,8 +62,14 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: ffmpeg-binaries
-          path: ffmpeg-binaries
+          name: ffmpeg-binaries-zips
+          path: ffmpeg-binaries-zips
+
+      - name: List downloaded artifacts
+        run: |
+          ls -R ffmpeg-binaries-zips
+          echo "Total ZIP files:"
+          find ffmpeg-binaries-zips -type f -name "*.zip" | wc -l
 
       - name: Create Release
         id: create_release
@@ -60,5 +81,4 @@ jobs:
           name: Release v${{ steps.package-version.outputs.current-version}}
           draft: false
           prerelease: false
-          files: |
-            ffmpeg-binaries/**/*
+          files: ffmpeg-binaries-zips/*.zip
