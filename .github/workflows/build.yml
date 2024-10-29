@@ -38,7 +38,21 @@ jobs:
           for dir in */; do
             platform=${dir%/}
             cd "$platform"
-            zip -j "../ffmpeg-${platform}.zip" ffmpeg* # This will include ffmpeg or ffmpeg.exe
+            if [[ $platform == *"win32"* ]]; then
+              # For Windows platforms, look for ffmpeg.exe
+              if [ -f "ffmpeg.exe" ]; then
+                zip -j "../ffmpeg-${platform}.zip" ffmpeg.exe
+              else
+                echo "Warning: ffmpeg.exe not found in $platform"
+              fi
+            else
+              # For non-Windows platforms, look for ffmpeg
+              if [ -f "ffmpeg" ]; then
+                zip -j "../ffmpeg-${platform}.zip" ffmpeg
+              else
+                echo "Warning: ffmpeg not found in $platform"
+              fi
+            fi
             cd ..
           done
           cd ..
