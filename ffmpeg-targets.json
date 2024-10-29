@@ -106,8 +106,8 @@
     {
         "platform": "win32",
         "arch": "ia32",
-        "filename": "ffmpeg-n6.1-latest-win32-gpl-6.1.zip",
-        "url": "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n6.1-latest-win32-gpl-6.1.zip",
+        "filename": "ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
+        "url": "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/autobuild-2024-10-07-12-41/ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
         "version": "6.1",
         "type": "zip"
     },
