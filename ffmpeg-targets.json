@@ -66,10 +66,10 @@
     {
         "platform": "darwin",
         "arch": "x64",
-        "filename": "ffmpeg-darwin-x86_64.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-darwin-x86_64.tar.gz",
-        "version": "6.1.2",
-        "type": "tar"
+        "filename": "ffmpeg61intel.zip",
+        "url": "https://www.osxexperts.net/ffmpeg61intel.zip",
+        "version": "6.1",
+        "type": "zip"
     },
     {
         "platform": "darwin",
