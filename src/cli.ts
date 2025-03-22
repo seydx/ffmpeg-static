@@ -24,7 +24,7 @@ program
   .requiredOption('--version <version>', 'FFmpeg version')
   .requiredOption('--url <url>', 'Download URL of the FFmpeg archive')
   .requiredOption('--filename <filename>', 'Name of the archive file')
-  .option('--type <type>', 'Archive type (zip, tar, deb)', 'zip')
+  .option('--type <type>', 'Archive type (zip, tar, deb, binary)', 'zip')
   .option('--distro <distro>', 'Linux distribution (for deb packages)')
   .option('--output <path>', 'Output directory', 'ffmpeg')
   .parse(process.argv);
@@ -67,8 +67,10 @@ async function downloadAndExtract() {
   }
 
   // Clean up
-  await fs.remove(archivePath);
-  console.log('Cleaned up temporary files');
+  if (options.type !== 'binary') {
+    await fs.remove(archivePath);
+    console.log('Cleaned up temporary files');
+  }
 }
 
 async function handleDebPackage(debPath: string, outputDir: string) {
@@ -154,19 +156,27 @@ async function handleDebPackage(debPath: string, outputDir: string) {
 async function handleBinaryFile(binaryPath: string, outputDir: string) {
   console.log(`Processing binary file: ${binaryPath}`);
 
-  // For binary files, we just need to rename and ensure proper permissions
+  // For binary files, we just need to ensure proper permissions
   const ffmpegBinaryName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
-  const destPath = resolve(outputDir, ffmpegBinaryName);
 
-  // Copy the file to the destination
-  await fs.copy(binaryPath, destPath);
+  // Check if the file was already downloaded with the right name
+  if (binaryPath.endsWith(ffmpegBinaryName)) {
+    // Just set executable permissions if needed
+    if (options.platform !== 'win32') {
+      await fs.chmod(binaryPath, 0o755);
+    }
+    console.log(`FFmpeg binary is ready at ${binaryPath}`);
+  } else {
+    // In case the downloaded file has a different name
+    const destPath = resolve(outputDir, ffmpegBinaryName);
+    await fs.move(binaryPath, destPath, { overwrite: true });
 
-  // Make it executable if not on Windows
-  if (options.platform !== 'win32') {
-    await fs.chmod(destPath, 0o755);
+    // Make it executable if not on Windows
+    if (options.platform !== 'win32') {
+      await fs.chmod(destPath, 0o755);
+    }
+    console.log(`FFmpeg binary is ready at ${destPath}`);
   }
-
-  console.log(`FFmpeg binary is ready at ${destPath}`);
 }
 
 async function extractArchive(archivePath: string, outputDir: string) {
