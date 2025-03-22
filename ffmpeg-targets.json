@@ -1,130 +1,294 @@
 [
-    {
-        "platform": "darwin",
-        "arch": "x64",
-        "filename": "ffmpeg71intel.zip",
-        "url": "https://www.osxexperts.net/ffmpeg71intel.zip",
-        "version": "7.1",
-        "type": "zip"
-    },
-    {
-        "platform": "darwin",
-        "arch": "arm64",
-        "filename": "ffmpeg71arm.zip",
-        "url": "https://www.osxexperts.net/ffmpeg71arm.zip",
-        "version": "7.1",
-        "type": "zip"
-    },
-    {
-        "platform": "linux",
-        "arch": "x64",
-        "filename": "ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
-        "version": "7.1",
-        "type": "tar"
-    },
-    {
-        "platform": "linux",
-        "arch": "arm64",
-        "filename": "ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
-        "version": "7.1",
-        "type": "tar"
-    },
-    {
-        "platform": "linux",
-        "arch": "arm",
-        "filename": "ffmpeg-alpine-arm32v7.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-alpine-arm32v7.tar.gz",
-        "version": "7.0.2",
-        "type": "tar"
-    },
-    {
-        "platform": "freebsd",
-        "arch": "x64",
-        "filename": "ffmpeg-freebsd-x86_64.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-freebsd-x86_64.tar.gz",
-        "version": "7.0.2",
-        "type": "tar"
-    },
-    {
-        "platform": "win32",
-        "arch": "ia32",
-        "filename": "ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
-        "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
-        "version": "7.1",
-        "type": "zip"
-    },
-    {
-        "platform": "win32",
-        "arch": "x64",
-        "filename": "ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
-        "version": "7.1",
-        "type": "zip"
-    },
-    {
-        "platform": "darwin",
-        "arch": "x64",
-        "filename": "ffmpeg61intel.zip",
-        "url": "https://www.osxexperts.net/ffmpeg61intel.zip",
-        "version": "6.1",
-        "type": "zip"
-    },
-    {
-        "platform": "darwin",
-        "arch": "arm64",
-        "filename": "ffmpeg-darwin-arm64.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-darwin-arm64.tar.gz",
-        "version": "6.1.2",
-        "type": "tar"
-    },
-    {
-        "platform": "linux",
-        "arch": "x64",
-        "filename": "ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
-        "version": "6.1",
-        "type": "tar"
-    },
-    {
-        "platform": "linux",
-        "arch": "arm64",
-        "filename": "ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
-        "version": "6.1",
-        "type": "tar"
-    },
-    {
-        "platform": "linux",
-        "arch": "arm",
-        "filename": "ffmpeg-alpine-arm32v7.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-alpine-arm32v7.tar.gz",
-        "version": "6.1.2",
-        "type": "tar"
-    },
-    {
-        "platform": "win32",
-        "arch": "ia32",
-        "filename": "ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
-        "url": "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/autobuild-2024-10-07-12-41/ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
-        "version": "6.1.2",
-        "type": "zip"
-    },
-    {
-        "platform": "win32",
-        "arch": "x64",
-        "filename": "ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
-        "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
-        "version": "6.1",
-        "type": "zip"
-    },
-    {
-        "platform": "freebsd",
-        "arch": "x64",
-        "filename": "ffmpeg-freebsd-x86_64.tar.gz",
-        "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-freebsd-x86_64.tar.gz",
-        "version": "6.1.2",
-        "type": "tar"
-    }
+  { "platform": "darwin", "arch": "arm64", "filename": "ffmpeg711arm.zip", "url": "https://www.osxexperts.net/ffmpeg711arm.zip", "version": "7.1.1", "type": "zip" },
+  { "platform": "darwin", "arch": "x64", "filename": "ffmpeg71intel.zip", "url": "https://www.osxexperts.net/ffmpeg71intel.zip", "version": "7.1", "type": "zip" },
+  { "platform": "darwin", "arch": "arm64", "filename": "ffmpeg71arm.zip", "url": "https://www.osxexperts.net/ffmpeg71arm.zip", "version": "7.1", "type": "zip" },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-7.1.tar.xz",
+    "version": "7.1",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linuxarm64-gpl-7.1.tar.xz",
+    "version": "7.1",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm",
+    "filename": "ffmpeg-alpine-arm32v7.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-alpine-arm32v7.tar.gz",
+    "version": "7.0.2",
+    "type": "tar"
+  },
+  {
+    "platform": "freebsd",
+    "arch": "x64",
+    "filename": "ffmpeg-freebsd-x86_64.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-freebsd-x86_64.tar.gz",
+    "version": "7.0.2",
+    "type": "tar"
+  },
+  {
+    "platform": "win32",
+    "arch": "ia32",
+    "filename": "ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
+    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
+    "version": "7.1",
+    "type": "zip"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-7.1.zip",
+    "version": "7.1",
+    "type": "zip"
+  },
+  { "platform": "darwin", "arch": "x64", "filename": "ffmpeg61intel.zip", "url": "https://www.osxexperts.net/ffmpeg61intel.zip", "version": "6.1", "type": "zip" },
+  {
+    "platform": "darwin",
+    "arch": "arm64",
+    "filename": "ffmpeg-darwin-arm64.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-darwin-arm64.tar.gz",
+    "version": "6.1.2",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz",
+    "version": "6.1",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-linuxarm64-gpl-6.1.tar.xz",
+    "version": "6.1",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm",
+    "filename": "ffmpeg-alpine-arm32v7.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-alpine-arm32v7.tar.gz",
+    "version": "6.1.2",
+    "type": "tar"
+  },
+  {
+    "platform": "win32",
+    "arch": "ia32",
+    "filename": "ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
+    "url": "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/autobuild-2024-10-07-12-41/ffmpeg-n6.1.2-9-g4571c80b40-win32-gpl-6.1.zip",
+    "version": "6.1.2",
+    "type": "zip"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-win64-gpl-6.1.zip",
+    "version": "6.1",
+    "type": "zip"
+  },
+  {
+    "platform": "freebsd",
+    "arch": "x64",
+    "filename": "ffmpeg-freebsd-x86_64.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.2/ffmpeg-freebsd-x86_64.tar.gz",
+    "version": "6.1.2",
+    "type": "tar"
+  },
+
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_arm64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_arm64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_armhf.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_armhf.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_amd64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_amd64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_arm64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_arm64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_armhf.deb",
+    "url": "https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_armhf.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_amd64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_amd64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_arm64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_arm64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_armhf.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_armhf.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_amd64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_amd64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_arm64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_arm64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_armhf.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_armhf.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_amd64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_amd64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_arm64.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_arm64.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_armhf.deb",
+    "url": "https://repo.jellyfin.org/releases/server/ubuntu/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_armhf.deb",
+    "version": "7.0.2-9-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9-portable_win64.zip",
+    "url": "https://repo.jellyfin.org/releases/server/windows/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9-portable_win64.zip",
+    "version": "7.0.2-9-jellyfin",
+    "type": "zip"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
+    "url": "https://repo.jellyfin.org/releases/server/linux/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
+    "version": "7.0.2-9-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
+    "url": "https://repo.jellyfin.org/releases/server/linux/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
+    "version": "7.0.2-9-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "darwin",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
+    "url": "https://repo.jellyfin.org/releases/server/macos/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
+    "version": "7.0.2-9-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "darwin",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
+    "url": "https://repo.jellyfin.org/releases/server/macos/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
+    "version": "7.0.2-9-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.0.2-9_portable_win64-clang-gpl.zip",
+    "url": "https://repo.jellyfin.org/releases/server/windows/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_win64-clang-gpl.zip",
+    "version": "7.0.2-9-jellyfin-clang",
+    "type": "zip"
+  }
 ]
