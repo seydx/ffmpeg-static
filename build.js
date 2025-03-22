@@ -21,7 +21,7 @@ for (const target of targets) {
   try {
     execSync(command, { stdio: 'inherit' });
     console.log(`FFmpeg for ${platform}-${arch}-${version} downloaded to ${targetDir}\n`);
-  } catch (error) {
+  } catch {
     console.error(`Failed to download FFmpeg for ${platform}-${arch}-${version}\n`);
   }
 }
