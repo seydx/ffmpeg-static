@@ -1,11 +1,9 @@
 name: FFmpeg Build and Release
-
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +21,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install required system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev
+
       - name: Build FFmpeg binaries
         run: node build.js
 
@@ -37,9 +40,34 @@ jobs:
           cd ffmpeg-binaries
           for dir in */; do
             platform=${dir%/}
-            cd "$platform"
-            zip -j "../ffmpeg-${platform}.zip" ffmpeg* # This will include ffmpeg or ffmpeg.exe
-            cd ..
+            platform_name="${platform}"
+            
+            # Check if the directory exists and contains ffmpeg binaries
+            if [ -d "$platform" ]; then
+              cd "$platform"
+              
+              # For Windows binaries, look for ffmpeg.exe
+              if [[ "$platform" == *"win32"* ]]; then
+                if [ -f "ffmpeg.exe" ]; then
+                  zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.exe
+                  echo "Created zip for $platform_name with ffmpeg.exe"
+                else
+                  echo "Warning: ffmpeg.exe not found in $platform"
+                fi
+              # For other platforms, look for ffmpeg
+              else
+                if [ -f "ffmpeg" ]; then
+                  zip -j "../ffmpeg-${platform_name}.zip" ffmpeg
+                  echo "Created zip for $platform_name with ffmpeg"
+                else
+                  echo "Warning: ffmpeg not found in $platform"
+                fi
+              fi
+              
+              cd ..
+            else
+              echo "Warning: Directory $platform does not exist"
+            fi
           done
           cd ..
 

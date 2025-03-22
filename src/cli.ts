@@ -60,6 +60,8 @@ async function downloadAndExtract() {
   // Handle different package types
   if (options.type === 'deb') {
     await handleDebPackage(archivePath, outputDir);
+  } else if (options.type === 'binary') {
+    await handleBinaryFile(archivePath, outputDir);
   } else {
     await extractArchive(archivePath, outputDir);
   }
@@ -147,6 +149,24 @@ async function handleDebPackage(debPath: string, outputDir: string) {
     // Clean up temp directory
     await fs.remove(tempDir);
   }
+}
+
+async function handleBinaryFile(binaryPath: string, outputDir: string) {
+  console.log(`Processing binary file: ${binaryPath}`);
+
+  // For binary files, we just need to rename and ensure proper permissions
+  const ffmpegBinaryName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
+  const destPath = resolve(outputDir, ffmpegBinaryName);
+
+  // Copy the file to the destination
+  await fs.copy(binaryPath, destPath);
+
+  // Make it executable if not on Windows
+  if (options.platform !== 'win32') {
+    await fs.chmod(destPath, 0o755);
+  }
+
+  console.log(`FFmpeg binary is ready at ${destPath}`);
 }
 
 async function extractArchive(archivePath: string, outputDir: string) {

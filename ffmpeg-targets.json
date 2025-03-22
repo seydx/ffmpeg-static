@@ -290,5 +290,13 @@
     "url": "https://repo.jellyfin.org/releases/server/windows/versions/jellyfin-ffmpeg/7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_win64-clang-gpl.zip",
     "version": "7.0.2-9-jellyfin-clang",
     "type": "zip"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "ffmpeg",
+    "url": "https://github.com/MarcA711/Rockchip-FFmpeg-Builds/releases/download/6.1-7/ffmpeg",
+    "version": "6.1-7-rockchip",
+    "type": "binary"
   }
 ]
