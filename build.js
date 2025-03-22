@@ -43,5 +43,6 @@ for (const target of targets) {
     console.log(`FFmpeg for ${dirName} downloaded to ${targetDir}\n`);
   } catch (error) {
     console.error(`Failed to download FFmpeg for ${dirName}: ${error.message}\n`);
+    process.exit(1);
   }
 }
