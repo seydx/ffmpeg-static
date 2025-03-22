@@ -294,8 +294,8 @@
     "platform": "linux",
     "arch": "arm64",
     "filename": "ffmpeg",
-    "url": "https://github.com/MarcA711/Rockchip-FFmpeg-Builds/releases/download/6.1-7/ffmpeg",
-    "version": "6.1-7-rockchip",
+    "url": "https://github.com/MarcA711/Rockchip-FFmpeg-Builds/releases/download/6.1-8-no_extra_dump/ffmpeg",
+    "version": "6.1-8-rockchip",
     "type": "binary"
   }
 ]
