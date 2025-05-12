@@ -24,7 +24,7 @@ program
   .requiredOption('--version <version>', 'FFmpeg version')
   .requiredOption('--url <url>', 'Download URL of the FFmpeg archive')
   .requiredOption('--filename <filename>', 'Name of the archive file')
-  .option('--type <type>', 'Archive type (zip, tar, deb, binary)', 'zip')
+  .option('--type <type>', 'Archive type (zip, tar, deb, binary, 7z)', 'zip')
   .option('--distro <distro>', 'Linux distribution (for deb packages)')
   .option('--output <path>', 'Output directory', 'ffmpeg')
   .parse(process.argv);
@@ -62,6 +62,8 @@ async function downloadAndExtract() {
     await handleDebPackage(archivePath, outputDir);
   } else if (options.type === 'binary') {
     await handleBinaryFile(archivePath, outputDir);
+  } else if (options.type === '7z') {
+    await handle7zArchive(archivePath, outputDir);
   } else {
     await extractArchive(archivePath, outputDir);
   }
@@ -176,6 +178,45 @@ async function handleBinaryFile(binaryPath: string, outputDir: string) {
       await fs.chmod(destPath, 0o755);
     }
     console.log(`FFmpeg binary is ready at ${destPath}`);
+  }
+}
+
+async function handle7zArchive(archivePath: string, outputDir: string) {
+  console.log(`Processing 7z archive: ${archivePath}`);
+
+  const tempExtractPath = resolve(outputDir, 'temp');
+  await fs.ensureDir(tempExtractPath);
+
+  try {
+    // Check if 7z command is available
+    await execAsync('7z --help');
+
+    // Extract the 7z archive
+    await execAsync(`7z x "${archivePath}" -o"${tempExtractPath}" -y`);
+
+    console.log(`Extracted 7z archive to ${tempExtractPath}`);
+
+    const ffmpegBinaryName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
+    const ffmpegPath = await findFile(tempExtractPath, ffmpegBinaryName);
+
+    if (!ffmpegPath) {
+      throw new Error('FFmpeg binary not found in extracted files.');
+    }
+
+    const destPath = resolve(outputDir, ffmpegBinaryName);
+    await fs.copy(ffmpegPath, destPath);
+
+    if (options.platform !== 'win32') {
+      await fs.chmod(destPath, 0o755);
+    }
+
+    console.log(`FFmpeg binary is ready at ${destPath}`);
+  } catch (error) {
+    console.error(`Error extracting 7z archive: ${error}`);
+    throw new Error('Failed to extract 7z archive. Make sure 7z is installed on your system.');
+  } finally {
+    // Clean up temp directory
+    await fs.remove(tempExtractPath);
   }
 }
 

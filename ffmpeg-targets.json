@@ -36,6 +36,30 @@
   },
   {
     "platform": "win32",
+    "arch": "arm64",
+    "filename": "ffmpeg-master-latest-winarm64-gpl.zip",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-winarm64-gpl.zip",
+    "version": "7.1.1",
+    "type": "7z"
+  },
+  {
+    "platform": "win32",
+    "arch": "arm64",
+    "filename": "ffmpeg-n7.1-latest-winarm64-gpl-7.1.zip",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-winarm64-gpl-7.1.zip",
+    "version": "7.1",
+    "type": "7z"
+  },
+  {
+    "platform": "win32",
+    "arch": "arm64",
+    "filename": "ffmpeg-n6.1-latest-winarm64-gpl-6.1.zip",
+    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-winarm64-gpl-6.1.zip",
+    "version": "6.1",
+    "type": "7z"
+  },
+  {
+    "platform": "win32",
     "arch": "ia32",
     "filename": "ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
     "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win32-gpl-7.1.zip",
