@@ -126,6 +126,189 @@
   {
     "platform": "linux",
     "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bookworm_amd64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bookworm_amd64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bookworm_arm64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bookworm_arm64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bookworm_armhf.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bookworm_armhf.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bookworm",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bullseye_amd64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bullseye_amd64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bullseye_arm64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bullseye_arm64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-bullseye_armhf.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-bullseye_armhf.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "bullseye",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-focal_amd64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-focal_amd64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-focal_arm64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-focal_arm64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-focal_armhf.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-focal_armhf.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "focal",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-jammy_amd64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-jammy_amd64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-jammy_arm64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-jammy_arm64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-jammy_armhf.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-jammy_armhf.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "jammy",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-noble_amd64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-noble_amd64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-noble_arm64.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-noble_arm64.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "linux",
+    "arch": "armhf",
+    "filename": "jellyfin-ffmpeg7_7.1.1-2-noble_armhf.deb",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg7_7.1.1-2-noble_armhf.deb",
+    "version": "7.1.1-2-jellyfin",
+    "distro": "noble",
+    "type": "deb"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2-portable_win64.zip",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2-portable_win64.zip",
+    "version": "7.1.1-2-jellyfin",
+    "type": "zip"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2_portable_linux64-gpl.tar.xz",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2_portable_linux64-gpl.tar.xz",
+    "version": "7.1.1-2-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "linux",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2_portable_linuxarm64-gpl.tar.xz",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2_portable_linuxarm64-gpl.tar.xz",
+    "version": "7.1.1-2-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "darwin",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2_portable_mac64-gpl.tar.xz",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2_portable_mac64-gpl.tar.xz",
+    "version": "7.1.1-2-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "darwin",
+    "arch": "arm64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2_portable_macarm64-gpl.tar.xz",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2_portable_macarm64-gpl.tar.xz",
+    "version": "7.1.1-2-jellyfin",
+    "type": "tar"
+  },
+  {
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "jellyfin-ffmpeg_7.1.1-2_portable_win64-clang-gpl.zip",
+    "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-2/jellyfin-ffmpeg_7.1.1-2_portable_win64-clang-gpl.zip",
+    "version": "7.1.1-2-jellyfin-clang",
+    "type": "zip"
+  },
+  {
+    "platform": "linux",
+    "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
     "version": "7.0.2-9-jellyfin",
