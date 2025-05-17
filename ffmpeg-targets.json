@@ -311,7 +311,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_amd64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bookworm",
     "type": "deb"
   },
@@ -320,7 +320,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_arm64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_arm64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bookworm",
     "type": "deb"
   },
@@ -329,7 +329,7 @@
     "arch": "armhf",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bookworm_armhf.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bookworm_armhf.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bookworm",
     "type": "deb"
   },
@@ -338,7 +338,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_amd64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bullseye",
     "type": "deb"
   },
@@ -347,7 +347,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_arm64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_arm64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bullseye",
     "type": "deb"
   },
@@ -356,7 +356,7 @@
     "arch": "armhf",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-bullseye_armhf.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-bullseye_armhf.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "bullseye",
     "type": "deb"
   },
@@ -365,7 +365,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_amd64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "focal",
     "type": "deb"
   },
@@ -374,7 +374,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_arm64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_arm64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "focal",
     "type": "deb"
   },
@@ -383,7 +383,7 @@
     "arch": "armhf",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-focal_armhf.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-focal_armhf.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "focal",
     "type": "deb"
   },
@@ -392,7 +392,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_amd64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "jammy",
     "type": "deb"
   },
@@ -401,7 +401,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_arm64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_arm64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "jammy",
     "type": "deb"
   },
@@ -410,7 +410,7 @@
     "arch": "armhf",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-jammy_armhf.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-jammy_armhf.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "jammy",
     "type": "deb"
   },
@@ -419,7 +419,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_amd64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_amd64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "noble",
     "type": "deb"
   },
@@ -428,7 +428,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_arm64.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_arm64.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "noble",
     "type": "deb"
   },
@@ -437,7 +437,7 @@
     "arch": "armhf",
     "filename": "jellyfin-ffmpeg7_7.0.2-9-noble_armhf.deb",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg7_7.0.2-9-noble_armhf.deb",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "distro": "noble",
     "type": "deb"
   },
@@ -446,7 +446,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9-portable_win64.zip",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9-portable_win64.zip",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "type": "zip"
   },
   {
@@ -454,7 +454,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "type": "tar"
   },
   {
@@ -462,7 +462,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "type": "tar"
   },
   {
@@ -470,7 +470,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "type": "tar"
   },
   {
@@ -478,7 +478,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
-    "version": "7.0.2-9-jellyfin",
+    "version": "7.0.2-jellyfin",
     "type": "tar"
   },
   {
