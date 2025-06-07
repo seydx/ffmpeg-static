@@ -22,7 +22,7 @@
     "platform": "linux",
     "arch": "arm",
     "filename": "ffmpeg-alpine-arm32v7.tar.gz",
-    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-alpine-arm32v7.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.7/ffmpeg-alpine-arm32v7.tar.gz",
     "version": "7.0.2",
     "type": "tar"
   },
@@ -30,7 +30,7 @@
     "platform": "freebsd",
     "arch": "x64",
     "filename": "ffmpeg-freebsd-x86_64.tar.gz",
-    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.4/ffmpeg-freebsd-x86_64.tar.gz",
+    "url": "https://github.com/homebridge/ffmpeg-for-homebridge/releases/download/v2.1.7/ffmpeg-freebsd-x86_64.tar.gz",
     "version": "7.0.2",
     "type": "tar"
   },
@@ -263,7 +263,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.1.1-5-portable_win64.zip",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5-portable_win64.zip",
-    "version": "7.1.1-jellyfin",
+    "version": "7.1.1-portable-jellyfin",
     "type": "zip"
   },
   {
@@ -271,7 +271,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.1.1-5_portable_linux64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5_portable_linux64-gpl.tar.xz",
-    "version": "7.1.1-jellyfin",
+    "version": "7.1.1-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -279,7 +279,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.1.1-5_portable_linuxarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5_portable_linuxarm64-gpl.tar.xz",
-    "version": "7.1.1-jellyfin",
+    "version": "7.1.1-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -287,7 +287,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.1.1-5_portable_mac64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5_portable_mac64-gpl.tar.xz",
-    "version": "7.1.1-jellyfin",
+    "version": "7.1.1-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -295,7 +295,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.1.1-5_portable_macarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5_portable_macarm64-gpl.tar.xz",
-    "version": "7.1.1-jellyfin",
+    "version": "7.1.1-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -303,7 +303,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.1.1-5_portable_win64-clang-gpl.zip",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-5/jellyfin-ffmpeg_7.1.1-5_portable_win64-clang-gpl.zip",
-    "version": "7.1.1-2-jellyfin-clang",
+    "version": "7.1.1-portable-jellyfin-clang",
     "type": "zip"
   },
   {
@@ -454,7 +454,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linux64-gpl.tar.xz",
-    "version": "7.0.2-jellyfin",
+    "version": "7.0.2-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -462,7 +462,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_linuxarm64-gpl.tar.xz",
-    "version": "7.0.2-jellyfin",
+    "version": "7.0.2-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -470,7 +470,7 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_mac64-gpl.tar.xz",
-    "version": "7.0.2-jellyfin",
+    "version": "7.0.2-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -478,7 +478,7 @@
     "arch": "arm64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_macarm64-gpl.tar.xz",
-    "version": "7.0.2-jellyfin",
+    "version": "7.0.2-portable-jellyfin",
     "type": "tar"
   },
   {
@@ -486,15 +486,15 @@
     "arch": "x64",
     "filename": "jellyfin-ffmpeg_7.0.2-9_portable_win64-clang-gpl.zip",
     "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9_portable_win64-clang-gpl.zip",
-    "version": "7.0.2-9-jellyfin-clang",
+    "version": "7.0.2-portable-jellyfin-clang",
     "type": "zip"
   },
   {
     "platform": "linux",
     "arch": "arm64",
     "filename": "ffmpeg",
-    "url": "https://github.com/MarcA711/Rockchip-FFmpeg-Builds/releases/download/6.1-8-no_extra_dump/ffmpeg",
-    "version": "6.1-8-rockchip",
+    "url": "https://github.com/MarcA711/Rockchip-FFmpeg-Builds/releases/download/6.1-11/ffmpeg",
+    "version": "6.1-rockchip",
     "type": "binary"
   }
 ]
