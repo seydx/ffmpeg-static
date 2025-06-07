@@ -42,6 +42,49 @@ interface Options {
 
 const options = program.opts<Options>();
 
+// Files and patterns to ignore
+const IGNORE_PATTERNS = [
+  // Documentation and web files
+  /\.html?$/i,
+  /\.css$/i,
+  /\.js$/i,
+  /\.md$/i,
+  /\.txt$/i,
+  /\.1$/, // Man pages
+  /\.3$/, // Man pages
+
+  // Common documentation files
+  /^readme/i,
+  /^license/i,
+  /^changelog/i,
+  /^authors/i,
+  /^copying/i,
+  /^install/i,
+  /^news/i,
+
+  // Web-related files
+  /bootstrap/i,
+  /\.min\./i,
+  /style/i,
+  /general/i,
+  /community/i,
+  /developer/i,
+  /platform/i,
+  /fate/i,
+  /faq/i,
+  /git-howto/i,
+  /mailing-list/i,
+  /nut/i,
+
+  // ffplay/ffprobe
+  /ffplay/i,
+  /ffprobe/i,
+];
+
+function shouldIgnoreFile(fileName: string): boolean {
+  return IGNORE_PATTERNS.some((pattern) => pattern.test(fileName));
+}
+
 async function downloadAndExtract() {
   const outputDir = resolve(process.cwd(), options.output);
   await fs.ensureDir(outputDir);
@@ -133,8 +176,8 @@ async function handle7zArchive(archivePath: string, outputDir: string) {
 
     console.log(`Extracted 7z archive to ${tempExtractPath}`);
 
-    // Extract ALL files, not just relevant ones
-    await extractAllFiles(tempExtractPath, outputDir);
+    // Extract relevant files only
+    await extractRelevantFiles(tempExtractPath, outputDir);
   } catch (error) {
     console.error(`Error extracting 7z archive: ${error}`);
     throw new Error('Failed to extract 7z archive. Make sure 7z is installed on your system.');
@@ -152,21 +195,25 @@ async function extractArchive(archivePath: string, outputDir: string) {
 
   await decompress(archivePath, tempExtractPath, { plugins: [decompressUnzip(), decompressTar(), decompressTargz(), decompressTarxz(), decompressTarbz2()] });
 
-  await extractAllFiles(tempExtractPath, outputDir);
+  await extractRelevantFiles(tempExtractPath, outputDir);
 
   // Clean up temp directory
   await fs.remove(tempExtractPath);
 }
 
-async function extractAllFiles(sourceDir: string, outputDir: string) {
-  console.log('Extracting all files...');
+async function extractRelevantFiles(sourceDir: string, outputDir: string) {
+  console.log('Extracting relevant files...');
 
   // Find all files recursively
   const allFiles = await findAllFiles(sourceDir);
 
-  console.log(`Found ${allFiles.length} files:`);
+  // Filter out ignored files
+  const relevantFiles = allFiles.filter((file) => !shouldIgnoreFile(file.name));
+  const ignoredCount = allFiles.length - relevantFiles.length;
 
-  for (const file of allFiles) {
+  console.log(`Found ${allFiles.length} files, keeping ${relevantFiles.length} (ignored ${ignoredCount}):`);
+
+  for (const file of relevantFiles) {
     const fileName = file.name;
     const sourceFile = file.path;
     const destPath = resolve(outputDir, fileName);
@@ -190,7 +237,7 @@ async function extractAllFiles(sourceDir: string, outputDir: string) {
     throw new Error(`FFmpeg binary not found after extraction: ${ffmpegName}`);
   }
 
-  console.log(`Successfully extracted ${allFiles.length} files to ${outputDir}`);
+  console.log(`Successfully extracted ${relevantFiles.length} relevant files to ${outputDir}`);
 }
 
 async function findAllFiles(dir: string): Promise<{ name: string; path: string }[]> {
