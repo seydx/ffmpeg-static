@@ -46,22 +46,26 @@ jobs:
             if [ -d "$platform" ]; then
               cd "$platform"
               
-              # Check what type of file we have
+              # Count files to determine strategy
+              file_count=$(find . -maxdepth 1 -type f | wc -l)
+              
+              if [ "$file_count" -eq 0 ]; then
+                echo "Warning: No files found in $platform"
+                cd ..
+                continue
+              fi
+              
+              echo "Processing $platform_name with $file_count files"
+              
+              # Check if this is a .deb package
               if [ -f "ffmpeg.deb" ]; then
-                # For .deb packages
+                # For .deb packages, just include the .deb file
                 zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.deb
-                echo "Created zip for $platform_name with ffmpeg.deb"
-              elif [ -f "ffmpeg.exe" ]; then
-                # For Windows binaries
-                zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.exe
-                echo "Created zip for $platform_name with ffmpeg.exe"
-              elif [ -f "ffmpeg" ]; then
-                # For Unix/Linux binaries
-                zip -j "../ffmpeg-${platform_name}.zip" ffmpeg
-                echo "Created zip for $platform_name with ffmpeg"
+                echo "✅ Created zip for $platform_name with ffmpeg.deb"
               else
-                echo "Warning: No ffmpeg binary or .deb found in $platform"
-                ls -la
+                # For all other types, include ALL files
+                zip "../ffmpeg-${platform_name}.zip" *
+                echo "✅ Created zip for $platform_name with $file_count files"
               fi
               
               cd ..

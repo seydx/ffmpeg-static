@@ -446,7 +446,7 @@ export default [
     arch: 'x64',
     filename: 'jellyfin-ffmpeg_7.0.2-9-portable_win64.zip',
     url: 'https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.0.2-9/jellyfin-ffmpeg_7.0.2-9-portable_win64.zip',
-    version: '7.0.2-jellyfin',
+    version: '7.0.2-portable-jellyfin',
     type: 'zip',
   },
   {

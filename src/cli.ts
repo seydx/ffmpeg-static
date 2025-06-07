@@ -133,21 +133,8 @@ async function handle7zArchive(archivePath: string, outputDir: string) {
 
     console.log(`Extracted 7z archive to ${tempExtractPath}`);
 
-    const ffmpegBinaryName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
-    const ffmpegPath = await findFile(tempExtractPath, ffmpegBinaryName);
-
-    if (!ffmpegPath) {
-      throw new Error('FFmpeg binary not found in extracted files.');
-    }
-
-    const destPath = resolve(outputDir, ffmpegBinaryName);
-    await fs.copy(ffmpegPath, destPath);
-
-    if (options.platform !== 'win32') {
-      await fs.chmod(destPath, 0o755);
-    }
-
-    console.log(`FFmpeg binary is ready at ${destPath}`);
+    // Extract ALL files, not just relevant ones
+    await extractAllFiles(tempExtractPath, outputDir);
   } catch (error) {
     console.error(`Error extracting 7z archive: ${error}`);
     throw new Error('Failed to extract 7z archive. Make sure 7z is installed on your system.');
@@ -165,41 +152,92 @@ async function extractArchive(archivePath: string, outputDir: string) {
 
   await decompress(archivePath, tempExtractPath, { plugins: [decompressUnzip(), decompressTar(), decompressTargz(), decompressTarxz(), decompressTarbz2()] });
 
-  const ffmpegBinaryName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
-  const ffmpegPath = await findFile(tempExtractPath, ffmpegBinaryName);
-
-  if (!ffmpegPath) {
-    throw new Error('FFmpeg binary not found in extracted files.');
-  }
-
-  const destPath = resolve(outputDir, ffmpegBinaryName);
-  await fs.copy(ffmpegPath, destPath);
-
-  if (options.platform !== 'win32') {
-    await fs.chmod(destPath, 0o755);
-  }
-
-  console.log(`FFmpeg binary is ready at ${destPath}`);
+  await extractAllFiles(tempExtractPath, outputDir);
 
   // Clean up temp directory
   await fs.remove(tempExtractPath);
 }
 
-async function findFile(dir: string, filename: string): Promise<string | null> {
-  const files = await fs.readdir(dir);
-  for (const file of files) {
-    const fullPath = join(dir, file);
-    const stats = await fs.stat(fullPath);
-    if (stats.isDirectory()) {
-      const result = await findFile(fullPath, filename);
-      if (result) {
-        return result;
-      }
-    } else if (file === filename) {
-      return fullPath;
+async function extractAllFiles(sourceDir: string, outputDir: string) {
+  console.log('Extracting all files...');
+
+  // Find all files recursively
+  const allFiles = await findAllFiles(sourceDir);
+
+  console.log(`Found ${allFiles.length} files:`);
+
+  for (const file of allFiles) {
+    const fileName = file.name;
+    const sourceFile = file.path;
+    const destPath = resolve(outputDir, fileName);
+
+    console.log(`  - ${fileName}`);
+
+    // Copy file to output directory
+    await fs.copy(sourceFile, destPath);
+
+    // Set executable permissions for binaries on Unix-like systems
+    if (options.platform !== 'win32' && (fileName === 'ffmpeg' || fileName === 'ffprobe' || !fileName.includes('.'))) {
+      await fs.chmod(destPath, 0o755);
     }
   }
-  return null;
+
+  // Verify that at least ffmpeg was extracted
+  const ffmpegName = options.platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
+  const ffmpegPath = resolve(outputDir, ffmpegName);
+
+  if (!(await fs.pathExists(ffmpegPath))) {
+    throw new Error(`FFmpeg binary not found after extraction: ${ffmpegName}`);
+  }
+
+  console.log(`Successfully extracted ${allFiles.length} files to ${outputDir}`);
+}
+
+async function findAllFiles(dir: string): Promise<{ name: string; path: string }[]> {
+  const allFiles: { name: string; path: string }[] = [];
+
+  async function searchDirectory(currentDir: string) {
+    try {
+      const items = await fs.readdir(currentDir);
+
+      for (const item of items) {
+        const itemPath = join(currentDir, item);
+        const stats = await fs.stat(itemPath);
+
+        if (stats.isDirectory()) {
+          // Recursively search subdirectories
+          await searchDirectory(itemPath);
+        } else if (stats.isFile()) {
+          // Add all files
+          allFiles.push({
+            name: item,
+            path: itemPath,
+          });
+        }
+      }
+    } catch (error) {
+      console.warn(`Warning: Could not read directory ${currentDir}: ${error.message}`);
+    }
+  }
+
+  await searchDirectory(dir);
+
+  // Sort files so ffmpeg comes first, then ffprobe, then everything else
+  allFiles.sort((a, b) => {
+    const aIsFFmpeg = /^ffmpeg(\.exe)?$/.test(a.name);
+    const bIsFFmpeg = /^ffmpeg(\.exe)?$/.test(b.name);
+    const aIsFFprobe = /^ffprobe(\.exe)?$/.test(a.name);
+    const bIsFFprobe = /^ffprobe(\.exe)?$/.test(b.name);
+
+    if (aIsFFmpeg && !bIsFFmpeg) return -1;
+    if (!aIsFFmpeg && bIsFFmpeg) return 1;
+    if (aIsFFprobe && !bIsFFprobe && !bIsFFmpeg) return -1;
+    if (!aIsFFprobe && bIsFFprobe && !aIsFFmpeg) return 1;
+
+    return a.name.localeCompare(b.name);
+  });
+
+  return allFiles;
 }
 
 downloadAndExtract().catch((error) => {
