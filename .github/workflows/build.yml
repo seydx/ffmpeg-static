@@ -24,7 +24,7 @@ jobs:
       - name: Install required system packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y dpkg-dev
+          sudo apt-get install -y dpkg-dev p7zip-full
 
       - name: Build FFmpeg binaries
         run: node build.js
@@ -42,26 +42,26 @@ jobs:
             platform=${dir%/}
             platform_name="${platform}"
             
-            # Check if the directory exists and contains ffmpeg binaries
+            # Check if the directory exists and contains files
             if [ -d "$platform" ]; then
               cd "$platform"
               
-              # For Windows binaries, look for ffmpeg.exe
-              if [[ "$platform" == *"win32"* ]]; then
-                if [ -f "ffmpeg.exe" ]; then
-                  zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.exe
-                  echo "Created zip for $platform_name with ffmpeg.exe"
-                else
-                  echo "Warning: ffmpeg.exe not found in $platform"
-                fi
-              # For other platforms, look for ffmpeg
+              # Check what type of file we have
+              if [ -f "ffmpeg.deb" ]; then
+                # For .deb packages
+                zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.deb
+                echo "Created zip for $platform_name with ffmpeg.deb"
+              elif [ -f "ffmpeg.exe" ]; then
+                # For Windows binaries
+                zip -j "../ffmpeg-${platform_name}.zip" ffmpeg.exe
+                echo "Created zip for $platform_name with ffmpeg.exe"
+              elif [ -f "ffmpeg" ]; then
+                # For Unix/Linux binaries
+                zip -j "../ffmpeg-${platform_name}.zip" ffmpeg
+                echo "Created zip for $platform_name with ffmpeg"
               else
-                if [ -f "ffmpeg" ]; then
-                  zip -j "../ffmpeg-${platform_name}.zip" ffmpeg
-                  echo "Created zip for $platform_name with ffmpeg"
-                else
-                  echo "Warning: ffmpeg not found in $platform"
-                fi
+                echo "Warning: No ffmpeg binary or .deb found in $platform"
+                ls -la
               fi
               
               cd ..

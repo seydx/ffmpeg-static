@@ -68,8 +68,8 @@ async function downloadAndExtract() {
     await extractArchive(archivePath, outputDir);
   }
 
-  // Clean up
-  if (options.type !== 'binary') {
+  // Clean up original archive (except for .deb packages where we keep them)
+  if (options.type !== 'binary' && options.type !== 'deb') {
     await fs.remove(archivePath);
     console.log('Cleaned up temporary files');
   }
@@ -78,81 +78,18 @@ async function downloadAndExtract() {
 async function handleDebPackage(debPath: string, outputDir: string) {
   console.log(`Processing Debian package: ${debPath}`);
 
-  // Create temp directory for extraction
-  const tempDir = resolve(outputDir, 'temp');
-  await fs.ensureDir(tempDir);
+  // For .deb packages, we'll keep the original .deb file and rename it to ffmpeg.deb
+  const debBinaryName = 'ffmpeg.deb';
+  const destPath = resolve(outputDir, debBinaryName);
 
-  try {
-    // Check if dpkg command is available
-    await execAsync('dpkg --version');
+  // Move the .deb file to the standardized name
+  await fs.move(debPath, destPath, { overwrite: true });
 
-    // Extract .deb package using dpkg
-    await execAsync(`dpkg-deb -x "${debPath}" "${tempDir}"`);
+  // Get file size for logging
+  const stats = await fs.stat(destPath);
+  const sizeMB = Math.round((stats.size / 1024 / 1024) * 100) / 100;
 
-    console.log(`Extracted Debian package to ${tempDir}`);
-
-    // FFmpeg in Jellyfin .deb packages is typically in /usr/lib/jellyfin-ffmpeg
-    const ffmpegBinaryName = 'ffmpeg';
-    const ffmpegPath = await findFile(tempDir, ffmpegBinaryName);
-
-    if (!ffmpegPath) {
-      throw new Error('FFmpeg binary not found in extracted files.');
-    }
-
-    const destPath = resolve(outputDir, ffmpegBinaryName);
-    await fs.copy(ffmpegPath, destPath);
-
-    if (options.platform !== 'win32') {
-      await fs.chmod(destPath, 0o755);
-    }
-
-    console.log(`FFmpeg binary is ready at ${destPath}`);
-  } catch (error) {
-    console.error(`Error with dpkg extraction: ${error}`);
-    console.log('Falling back to manual ar extraction method...');
-
-    // If dpkg is not available, try using ar and tar manually
-    try {
-      // Extract the data.tar.* from the .deb package
-      await execAsync(`ar x "${debPath}" data.tar.* --output="${tempDir}"`);
-
-      // Find which data.tar.* file was extracted
-      const files = await fs.readdir(tempDir);
-      const dataTarFile = files.find((file) => file.startsWith('data.tar.'));
-
-      if (!dataTarFile) {
-        throw new Error('No data.tar.* file found in the .deb package');
-      }
-
-      const dataTarPath = resolve(tempDir, dataTarFile);
-
-      // Extract the data.tar.* file
-      await execAsync(`tar -xf "${dataTarPath}" -C "${tempDir}"`);
-
-      // FFmpeg in Jellyfin .deb packages is typically in /usr/lib/jellyfin-ffmpeg
-      const ffmpegBinaryName = 'ffmpeg';
-      const ffmpegPath = await findFile(tempDir, ffmpegBinaryName);
-
-      if (!ffmpegPath) {
-        throw new Error('FFmpeg binary not found in extracted files.');
-      }
-
-      const destPath = resolve(outputDir, ffmpegBinaryName);
-      await fs.copy(ffmpegPath, destPath);
-
-      if (options.platform !== 'win32') {
-        await fs.chmod(destPath, 0o755);
-      }
-
-      console.log(`FFmpeg binary is ready at ${destPath}`);
-    } catch (fallbackError) {
-      console.error(`Failed to extract .deb file: ${fallbackError}`);
-      throw new Error('Failed to extract .deb package with both dpkg and ar methods');
-    }
-  } finally {
-    // Clean up temp directory
-    await fs.remove(tempDir);
-  }
+  console.log(`Debian package is ready at ${destPath} (${sizeMB}MB)`);
 }
 
 async function handleBinaryFile(binaryPath: string, outputDir: string) {
