@@ -259,14 +259,6 @@ export default [
     type: 'deb',
   },
   {
-    platform: 'win32',
-    arch: 'x64',
-    filename: 'jellyfin-ffmpeg_7.1.1-6-portable_win64.zip',
-    url: 'https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.1-6/jellyfin-ffmpeg_7.1.1-6-portable_win64.zip',
-    version: '7.1.1-portable-jellyfin',
-    type: 'zip',
-  },
-  {
     platform: 'linux',
     arch: 'x64',
     filename: 'jellyfin-ffmpeg_7.1.1-6_portable_linux64-gpl.tar.xz',
