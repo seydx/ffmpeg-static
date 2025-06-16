@@ -24,9 +24,6 @@ unzip ffmpeg-linux-x64-7.1.zip
 - **Linux**: `ffmpeg` - Ready to use
 - **FreeBSD**: `ffmpeg` - Ready to use
 
-### Debian Packages (Install via APT)
-- **Ubuntu/Debian**: `ffmpeg.deb` - Install with `sudo apt install ./ffmpeg.deb`
-
 ## 🗂️ Supported Platforms
 
 | Platform | Architectures | Versions | Sources |
@@ -82,30 +79,14 @@ Edit `ffmpeg-targets.js`:
 }
 ```
 
-## 📊 Download Sources
+## 🔑 Licensing
 
-| Source | Description |
-|--------|-------------|
-| [BtbN FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) | Official static builds |
-| [OSX Experts](https://www.osxexperts.net/) | macOS optimized |
-| [Jellyfin FFmpeg](https://github.com/jellyfin/jellyfin-ffmpeg) | Media server optimized |
-| [Rockchip Builds](https://github.com/MarcA711/Rockchip-FFmpeg-Builds) | ARM SBC acceleration |
-
-## ⚠️ Important Notes
-
-- **Portable binaries**: Statically linked, no dependencies required
-- **Debian packages**: Dynamically linked, installs system-wide with dependencies
-- **Licensing**: All binaries subject to GPL/LGPL - verify compliance for distribution
-- **Hardware acceleration**: Choose Jellyfin/Rockchip builds for optimized performance
+All binaries subject to GPL/LGPL - verify compliance for distribution. This project is MIT licensed for the build tooling only.
 
 ## 🔗 Related
 
 - [camera.ui](https://github.com/seydx/camera.ui) - Camera surveillance system
 - [FFmpeg](https://ffmpeg.org/) - Official FFmpeg project
-
-## License
-
-MIT
 
 ---
 
