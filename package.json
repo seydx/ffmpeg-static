@@ -1,6 +1,6 @@
 {
   "name": "@seydx/ffmpeg-static",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "FFmpeg static binaries for multiple platforms",
   "author": "seydx (https://github.com/seydx/camera.ui)",
   "type": "module",
