@@ -17,7 +17,7 @@
     "prepublishOnly": "npm i --package-lock-only && npm run lint && npm run format && npm run build"
   },
   "dependencies": {
-    "axios": "^1.10.0",
+    "axios": "^1.11.0",
     "commander": "^14.0.0",
     "decompress": "^4.2.1",
     "decompress-tar": "^4.1.1",
